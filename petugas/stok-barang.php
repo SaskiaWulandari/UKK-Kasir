@@ -40,7 +40,7 @@
                                 <td>Rp. <?php echo number_format($data['Harga']);?></td>
                                 <td><?php echo $data['Stok']?></td>
                                 <td><?php echo $data['Terjual']?></td>
-                                <td align="center" width="12%"><a href="?page=edit-produk&ProdukID=<?= $data['ProdukID']; ?>" class="badge badge-primary p-2" title="Edit"><i class="">Edit</i></a> | <a href="?page=hapus-produk&ProdukID=<?= $data['ProdukID']; ?>" class="badge badge-danger p-2 delete-data" title='Delete'><i class="">Hapus</i></a> </td>
+                                <td align="center" width="12%"><a href="?page=edit-produk&ProdukID=<?= $data['ProdukID']; ?>" class="badge badge-primary p-2" title="Edit"><i class="">Edit</i></a> | <a onclick="return confirm('Apakah anda yakin ingin menghapus nya!!')" href="?page=hapus-produk&ProdukID=<?= $data['ProdukID']; ?>" class="badge badge-danger p-2 delete-data" title='Delete'><i class="">Hapus</i></a> </td>
                                 <td></td>
                                 <td>
                                     

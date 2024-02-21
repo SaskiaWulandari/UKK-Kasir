@@ -4,7 +4,6 @@ if (isset($_POST['tambah'])) {
   $nama = $_POST['nama'];
   $harga = $_POST['harga'];
   $stok = $_POST['stok'];
-
   $target = "../foto/";
   $time = date('dmYHis');
   $type = strtolower(pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION));
@@ -13,20 +12,12 @@ if (isset($_POST['tambah'])) {
   
   $uploadOk = 1;
 
-  // File upload handling
   if (move_uploaded_file($_FILES["foto"]["tmp_name"], $targetfile)) {
-      $sql = "INSERT INTO produk (NamaProduk, Harga, Stok, Foto) VALUES ('$nama', '$harga', $stok, '$filename')";
-      if ($koneksi->query($sql) === TRUE) {
+      $sql = $koneksi->query("INSERT INTO produk (NamaProduk, Harga, Stok, Foto) VALUES ('$nama', '$harga', $stok, '$filename')");
           echo "<script>alert('Berhasil menambahkan produk');window.location.href='?page=stok';</script>";
-          exit();
-      } else {
-          echo "Error: " . $sql . "<br>" . $koneksi->error;
-      }
   } else {
       echo "Maaf, terjadi kesalahan saat mengupload file gambar.";
   }
-
-  $koneksi->close();
 }
 
 ?>

@@ -14,21 +14,15 @@ if ($_SESSION['Username']=="") {
     <title>KASIR</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../bootstrap-5.3.2-dist/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap-5.3.2-dist/bootstrap.min.css">
     <script src="../bootstrap-5.3.2-dist/jquery.min.js"></script>
     <script src="../bootstrap-5.3.2-dist/bootstrap.min.js"></script>
     <style>
-        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
         .row.content {height: 850px}
-        
-        
-        /* Set gray background color and 100% height */
         .sidenav {
             background-color: #f1f1f1;
             height: 100%;
         }
-            
-        /* On small screens, set height to 'auto' for the grid */
         @media screen and (max-width: 767px) {
         .row.content {height: auto;} 
         }
@@ -41,9 +35,9 @@ if ($_SESSION['Username']=="") {
     <div class="col-sm-3 sidenav hidden-xs">
       <h2><?php echo $level ?></h2>
       <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="index.php">Dashboard</a></li>
-        <li><a href="?page=stok">Stok</a></li>
-        <li><a href="?page=user">User</a></li>
+        <li <?php if(isset($_GET['page']) && $_GET['page'] == 'dashboard') echo 'class="active"'; ?>><a href="?page=dashboard">Dashboard</a></li>
+        <li <?php if(isset($_GET['page']) && $_GET['page'] == 'stok') echo 'class="active"'; ?>><a href="?page=stok">Stok</a></li>
+        <li <?php if(isset($_GET['page']) && $_GET['page'] == 'user') echo 'class="active"'; ?>><a href="?page=user">User</a></li>
         <li><a href="logout.php">Log Out</a></li>
       </ul><br>
     </div>
@@ -79,6 +73,9 @@ if ($_SESSION['Username']=="") {
                         break;
                     case 'hapus-produk':
                         include "hapus-produk.php";
+                        break;
+                    case 'dashboard':
+                        include "dashboard.php";
                         break;
 
                     case 'logout':

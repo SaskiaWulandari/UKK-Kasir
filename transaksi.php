@@ -54,7 +54,6 @@ if (isset($_POST['tambah'])) {
 
   
         <script>
-            // Fungsi untuk menambahkan input field untuk menu
             function tambahMenu() {
                 var container = document.getElementById("menuContainer");
                 var newMenuInput = document.createElement("div");
@@ -83,21 +82,7 @@ if (isset($_POST['tambah'])) {
         </script>        
       </head>
     
-      <nav class="navbar navbar-expand-lg navbar-primary bg-primary fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><strong>PELANGGAN</strong></a>
-            <div class="navbar-collapse">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="pilih-menu.php">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="transaksi.php">Transaksi</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+     
         <div class="p-4" id="main-content">
           <div class="card mt-5">
             <div class="card-body">
@@ -108,13 +93,16 @@ if (isset($_POST['tambah'])) {
                             <label for="tanggal" class="form-label">Tanggal Transaksi</label>
                             <input type="date" value="<?php echo date('Y-m-d'); ?>" class="form-control" id="tanggal" name="tanggal" readonly required>
                         </div>
-                        <div>
+                        <div class="row">
+                        
+                        <div class="from-group col-sm-6">
                             <label for="nama" class="form-label">Nama Anda</label>
                             <input type="text" class="form-control" id="nama" name="nama" required>
                         </div>
-                        <div>
+                        <div class="from-group col-sm-6">
                             <label for="nomeja" class="form-label">No Meja</label>
                             <input type="number" min="1" class="form-control" id="nomeja" name="nomeja" required>
+                        </div>
                         </div>
                         <div id="menuContainer">
                           <div>

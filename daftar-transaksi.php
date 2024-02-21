@@ -8,21 +8,7 @@ include("header.php");
 </style>
 
 <body>
-      <nav class="navbar navbar-expand-lg navbar-primary bg-primary fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Kasir</a>
-            <div class="navbar-collapse">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="pilih-menu.php">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="transaksi.php">Transaksi</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+
         <div class="p-4" id="main-content">
           <a href="transaksi.php" class="btn btn-md btn-primary float-end">Tambah Transaksi+</a>
           <div class="card mt-5">

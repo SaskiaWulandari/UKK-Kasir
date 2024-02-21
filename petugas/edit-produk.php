@@ -1,13 +1,11 @@
 <?php
-
-include_once("../koneksi/koneksi.php");
  
 if(isset($_POST['update'])) {	
 	$id = $_GET['ProdukID'];
     $name = $_POST['NamaProduk'];
     $harga = $_POST['Harga'];
     $stok = $_POST['Stok'];
-    $result = mysqli_query($koneksi, "UPDATE produk SET NamaProduk='$name', Harga='$harga', Stok='$stok' WHERE ProdukID=$id");
+    $result = $koneksi->query("UPDATE produk SET NamaProduk='$name', Harga='$harga', Stok='$stok' WHERE ProdukID=$id");
 	
 	header("Location: index.php?page=stok");
     echo "<script>alert('berhasil')</script>";
@@ -16,7 +14,7 @@ if(isset($_POST['update'])) {
 
 $id = $_GET['ProdukID'];
 
-$result1 = mysqli_query($koneksi, "SELECT * FROM produk WHERE ProdukID=$id");
+$result1 = $koneksi->query("SELECT * FROM produk WHERE ProdukID=$id");
  
 while($barang_data = mysqli_fetch_array($result1))
 {

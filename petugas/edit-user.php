@@ -1,9 +1,7 @@
 <?php 
 $id = $_GET['UserID'];
-$sql = "SELECT * FROM user WHERE UserID = $id";
-$result = $koneksi->query($sql);
-
-$data = $result->fetch_assoc();
+$sql = $koneksi->query("SELECT * FROM user WHERE UserID = $id");
+$data = $sql->fetch_assoc();
 
     
     if(isset($_POST['submit'])) {
@@ -11,7 +9,7 @@ $data = $result->fetch_assoc();
         $level = $_POST['Level'];
         $password = md5($_POST['Password']);
 
-        $result = mysqli_query($koneksi, "UPDATE user SET Username = '$name', Password = '$password', Level = '$level' WHERE UserID = '$id'");
+        $result = $koneksi->query("UPDATE user SET Username = '$name', Password = '$password', Level = '$level' WHERE UserID = '$id'");
 
         echo "<script>alert('Berhasil mengedit data user');window.location.href='?page=user';</script>";
     }

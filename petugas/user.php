@@ -3,10 +3,9 @@
               <div class="card">
                 <div class="card-body">
                     <p class="card-description">
-                    <!-- Add class <code>.table</code> -->
                     <h4 class="card-title">Daftar User</h4>
                         <?php 
-                        if ($_SESSION['Level'] == "Admin") {
+                        if ($level == "Admin") {
                         ?>
                         <a href="?page=tambah-user" class="btn btn-primary btn-sm">Tambah User+</a>
                         <?php
@@ -22,7 +21,7 @@
                                         <th>Username</th>
                                         <th>Password</th>
                                         <th>Level</th>
-                                        <?php if ($_SESSION['Level'] == "Admin") { ?>
+                                        <?php if ($level == "Admin") { ?>
                                         <th>Pilihan</th>
                                         <?php } ?>
                                     </tr>
@@ -39,8 +38,8 @@
                                     <td><?php echo $data['Username']; ?></td>
                                     <td><?php echo $data['Password']; ?></td>
                                     <td><?php echo $data['Level']; ?></td>
-                                    <?php if ($_SESSION['Level'] == "Admin") { ?>
-                                    <td><a type='button' href='?page=edit-user&UserID=<?= $data['UserID']; ?>' class='btn btn-sm btn-warning'>Edit</a>/<a type='button' href='?page=hapus-user&UserID=<?= $data['UserID']; ?>' class='btn btn-sm btn-danger'>Delete</a></td>
+                                    <?php if ($level == "Admin") { ?>
+                                    <td><a type='button' href='?page=edit-user&UserID=<?= $data['UserID']; ?>' class='btn btn-sm btn-warning'>Edit</a>/<a onclick="return confirm('Apakah anda yakin ingin menghapus nya!!')" type='button' href='?page=hapus-user&UserID=<?= $data['UserID']; ?>' class='btn btn-sm btn-danger'>Delete</a></td>
                                     <?php } ?>
                                 </tr>
                                 <?php } ?>

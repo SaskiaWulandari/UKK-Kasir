@@ -3,38 +3,6 @@ include("koneksi/koneksi.php");
 include("header.php");
 ?>
 <body>
-
-<style>
-  .main-content {
-    margin-top: 60px;
-  }
-  .card-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    .card {
-        margin-bottom: 20px;
-    }
-</style>
-
-    <nav class="navbar navbar-expand-lg navbar-primary bg-primary fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><strong>PELANGGAN</strong></a>
-            <div class="navbar-collapse">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="pilih-menu.php">Beranda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="transaksi.php">Transaksi</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
     <div class="main-content">
         <div class="card-container">
             <?php
@@ -49,15 +17,10 @@ include("header.php");
                         <p class='card-text'>Harga: RP.<?php echo number_format($data['Harga']) ?></p>
                         <p class='card-text'>Stok: <?php echo $data['Stok']?></p>
                         <a href='transaksi.php?id=<?= $data['ProdukID']; ?>' class='btn btn-md btn-primary float-end'>Beli</a>
-
-
                     </div>
                 
                 </div>
-
-                <?php
-            }
-            ?>
+                <?php } ?>
         </div>
     </div>
 </body>

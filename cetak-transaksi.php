@@ -14,7 +14,7 @@
           
           <div class="card col-6">
             <div class="card-body">
-              <p style="text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p style="text-align: center">After Freday Coffee / South Goldfinch Tangerang Selatan SGB 01 / Jl. Boulevard Raya Gading Serpong.</p>
             ============================
         <?php
             include("koneksi/koneksi.php");
@@ -43,7 +43,7 @@
                         </thead>
                         <tbody>
                         <?php
-                          // Fetch details for the current Penjualan
+                          
                           $sql3 = $koneksi->query("SELECT * FROM detailpenjualan WHERE DetailID = '" . $data['PenjualanID'] . "'");
                             
                           $totalharga = 0;
@@ -82,7 +82,7 @@
             ============================
             <p style="text-align: center"><?php  echo date('d-m-Y H:i:s'); ?></p>
             ============================
-            <p style="text-align: center">Kritik & Saran Whatsapp: 085693204615</p>
+            <p style="text-align: center">Kritik & Saran Whatsapp: 08568764031</p>
             </div>
           </div>
         </div>

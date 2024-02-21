@@ -38,7 +38,7 @@
         $level = $_POST['Level'];
         $password = md5($_POST['Password']);
 
-        $result = mysqli_query($koneksi, "INSERT INTO user (Username, Password, Level) VALUES('$name','$password','$level')");
+        $result = $koneksi->query("INSERT INTO user (Username, Password, Level) VALUES('$name','$password','$level')");
 
         echo "User added successfully. <a href='index.php?page=user'>View Users</a>";
         echo"<script>alert('Berhasil menambahkan data')</script>";
